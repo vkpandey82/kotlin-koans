@@ -14,5 +14,14 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
 
 
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    val sb = StringBuilder("{")
+    collection.forEachIndexed { index, it ->
+        if (index < collection.size - 1) {
+            sb.append(it).append(", ")
+        } else {
+            sb.append(it).append("}")
+        }
+    }
+    return sb.toString()
+
 }
